@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Test page</h1>
+    <% if (!nickname) { %>
+      <p>need login</p>
+      <a href="/login">login</a>
+      <a href="/join">join</a>
+    <% } else { %>
+      <p>hello. <%= nickname %></p>
+      <a href="/logout">logout</a>
+    <% } %>
+  </body>
+</html>
