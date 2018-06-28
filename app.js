@@ -34,7 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
   secret: 'draconian12#@!',
-  // key: 'sid', --> sid 설정이 없더라도 connect.sid 로 쿠키는 저장된다.
+  key: 'sid', // --> sid 설정이 없더라도 connect.sid 로 쿠키는 저장된다.
+  // 세션 쿠키를 제어하기 위해선 설정하는게 좋을 듯
   resave: false,
   saveUninitialized: true,
   cookie: {

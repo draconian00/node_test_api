@@ -47,7 +47,9 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  delete req.session.user_uid;
+  // delete req.session.user_uid;
+  req.session.destroy();
+  res.clearCookie('sid'); // 로그아웃 후 기존 sid 쿠키를 지우고 새로 발급
   res.redirect('/');
 });
 
